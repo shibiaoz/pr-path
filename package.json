@@ -1,0 +1,26 @@
+{
+  "name": "pr-path",
+  "version": "1.0.0",
+  "description": "get project path by specila file or directory",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shibiaoz/pr-path.git"
+  },
+  "keywords": [
+    "project",
+    "path"
+  ],
+  "author": "knight",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shibiaoz/pr-path/issues"
+  },
+  "homepage": "https://github.com/shibiaoz/pr-path#readme",
+  "devDependencies": {
+    "lodash": "^4.17.11"
+  }
+}
