@@ -1,5 +1,5 @@
 {
-  "name": "pr-path",
+  "name": "pr-root",
   "version": "1.0.0",
   "description": "get project path by specila file or directory",
   "main": "index.js",
