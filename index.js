@@ -3,12 +3,13 @@ let sep = path.sep;
 let cwd = process.cwd();
 let curDir = cwd + sep;
 let fs = require('fs')
-var flagNum = 0;
-function getRootPath(fileName, prPath) {
+var flagNum = 1;
+var MAXFLOORNUM = 4;
+function iteraPath(fileName, prPath) {
     prPath = prPath || curDir;
     let filePath = prPath + fileName;
-    if(flagNum > 4) {
-        throw Error('找了4层没找到，你当前位置是不是有问题...')
+    if(flagNum > MAXFLOORNUM) {
+        throw Error(`往上找了${MAXFLOORNUM}层没找到，你当前位置是不是有问题...`)
     }    
     if(fs.existsSync(filePath)) {
        return prPath;
@@ -20,7 +21,13 @@ function getRootPath(fileName, prPath) {
         let upPath = fileArrSplit.join(sep) + sep;
         flagNum++;
         // console.log(upPath + fileName)
-        return getRootPath(fileName, upPath);
+        return iteraPath(fileName, upPath);
     }
 }
+
+function getRootPath(fileName,floorNum) {
+    MAXFLOORNUM = floorNum || MAXFLOORNUM;
+    return iteraPath(fileName);
+}
+
 exports.getRootPath = getRootPath;
