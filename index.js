@@ -10,7 +10,7 @@ function iteraPath(fileName, prPath) {
     let filePath = prPath + fileName;
     if(flagNum > MAXFLOORNUM) {
         throw Error(`往上找了${MAXFLOORNUM}层没找到，你当前位置是不是有问题...`)
-    }    
+    }
     if(fs.existsSync(filePath)) {
        return prPath;
     }
@@ -26,6 +26,7 @@ function iteraPath(fileName, prPath) {
 }
 
 function getRootPath(fileName,floorNum) {
+    flagNum = 1;
     MAXFLOORNUM = floorNum || MAXFLOORNUM;
     return iteraPath(fileName);
 }
