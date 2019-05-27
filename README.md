@@ -5,3 +5,4 @@ var prPath = require('pr-root')
 prPath.getRootPath('package.json');
 prPath.getRootPath('node_modules');
 ```
+test
